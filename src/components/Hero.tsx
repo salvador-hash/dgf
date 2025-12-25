@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Search, MapPin, Home, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -29,11 +30,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-200">
-            <a href="#propiedades">
+            <Link to="/proyectos">
               <Button variant="orange" size="xl">
                 Ver Proyectos
               </Button>
-            </a>
+            </Link>
             <a href="#contacto">
               <Button variant="white-outline" size="xl">
                 Contactar Asesor

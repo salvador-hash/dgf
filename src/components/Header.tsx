@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-dgf.png";
@@ -6,6 +7,8 @@ import logo from "@/assets/logo-dgf.png";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,11 +19,11 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "INICIO", href: "#inicio" },
-    { name: "PROYECTOS", href: "#propiedades" },
-    { name: "SERVICIOS", href: "#servicios" },
-    { name: "NOSOTROS", href: "#nosotros" },
-    { name: "CONTACTO", href: "#contacto" },
+    { name: "INICIO", href: "/", isRoute: true },
+    { name: "PROYECTOS", href: "/proyectos", isRoute: true },
+    { name: "SERVICIOS", href: isHomePage ? "#servicios" : "/#servicios", isRoute: !isHomePage },
+    { name: "NOSOTROS", href: isHomePage ? "#nosotros" : "/#nosotros", isRoute: !isHomePage },
+    { name: "CONTACTO", href: isHomePage ? "#contacto" : "/#contacto", isRoute: !isHomePage },
   ];
 
   return (
@@ -34,7 +37,7 @@ const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <div className={`rounded-lg overflow-hidden transition-all duration-300 ${
               isScrolled ? "bg-primary p-2" : "bg-primary p-2"
             }`}>
@@ -44,22 +47,36 @@ const Header = () => {
                 className="h-8 md:h-10 w-auto object-contain"
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`px-5 py-2 text-xs font-semibold tracking-widest transition-all duration-300 ${
-                  isScrolled 
-                    ? "text-foreground hover:text-primary" 
-                    : "text-white hover:text-primary"
-                }`}
-              >
-                {link.name}
-              </a>
+              link.isRoute ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className={`px-5 py-2 text-xs font-semibold tracking-widest transition-all duration-300 ${
+                    isScrolled 
+                      ? "text-foreground hover:text-primary" 
+                      : "text-white hover:text-primary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`px-5 py-2 text-xs font-semibold tracking-widest transition-all duration-300 ${
+                    isScrolled 
+                      ? "text-foreground hover:text-primary" 
+                      : "text-white hover:text-primary"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              )
             ))}
           </nav>
 
@@ -94,14 +111,25 @@ const Header = () => {
       >
         <nav className="container mx-auto px-6 py-6 flex flex-col gap-1">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-foreground text-sm font-semibold tracking-widest py-3 px-4 hover:bg-secondary hover:text-primary transition-all duration-300 rounded-lg"
-            >
-              {link.name}
-            </a>
+            link.isRoute ? (
+              <Link
+                key={link.name}
+                to={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-foreground text-sm font-semibold tracking-widest py-3 px-4 hover:bg-secondary hover:text-primary transition-all duration-300 rounded-lg"
+              >
+                {link.name}
+              </Link>
+            ) : (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-foreground text-sm font-semibold tracking-widest py-3 px-4 hover:bg-secondary hover:text-primary transition-all duration-300 rounded-lg"
+              >
+                {link.name}
+              </a>
+            )
           ))}
           <a href="#contacto" onClick={() => setIsMobileMenuOpen(false)}>
             <Button variant="orange" size="lg" className="mt-4 w-full">
