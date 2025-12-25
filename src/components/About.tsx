@@ -53,7 +53,7 @@ const About = () => {
               ))}
             </ul>
 
-            <Button variant="teal" size="lg" className="animate-fade-up" style={{ animationDelay: "700ms" }}>
+            <Button variant="orange" size="lg" className="animate-fade-up" style={{ animationDelay: "700ms" }}>
               Conocer Más
             </Button>
           </div>

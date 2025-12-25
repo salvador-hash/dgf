@@ -139,7 +139,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <Button type="submit" variant="teal" size="lg" className="w-full md:w-auto group">
+              <Button type="submit" variant="orange" size="lg" className="w-full md:w-auto group">
                 Enviar Mensaje
                 <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>

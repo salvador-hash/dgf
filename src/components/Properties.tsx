@@ -120,7 +120,7 @@ const Properties = () => {
 
         {/* CTA */}
         <div className="text-center mt-12 animate-fade-up">
-          <Button variant="teal" size="lg" className="group">
+          <Button variant="orange" size="lg" className="group">
             Ver Todos los Proyectos
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>

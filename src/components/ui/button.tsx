@@ -9,16 +9,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-teal-dark shadow-md hover:shadow-lg",
+        default: "bg-primary text-primary-foreground hover:bg-orange-dark shadow-md hover:shadow-lg",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // VyV Style Variants
-        teal: "bg-primary text-primary-foreground hover:bg-teal-dark shadow-md hover:shadow-lg",
+        // DGF Brand Variants
+        orange: "bg-orange text-primary-foreground hover:bg-orange-dark shadow-md hover:shadow-lg",
+        teal: "bg-teal text-primary-foreground hover:bg-teal-dark shadow-md hover:shadow-lg",
         navy: "bg-accent text-accent-foreground hover:bg-navy-light shadow-md hover:shadow-lg",
-        "teal-outline": "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground",
+        "orange-outline": "border-2 border-orange text-orange hover:bg-orange hover:text-primary-foreground",
+        "teal-outline": "border-2 border-teal text-teal hover:bg-teal hover:text-primary-foreground",
         "navy-outline": "border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground",
         "white-outline": "border-2 border-white text-white hover:bg-white hover:text-accent",
       },
