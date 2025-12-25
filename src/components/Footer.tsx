@@ -23,9 +23,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Facebook, href: "https://www.facebook.com/dgfinmobiliaria.peru/", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/dgf.inmobiliaria/", label: "Instagram" },
+    { icon: Linkedin, href: "https://pe.linkedin.com/company/dgfinmobiliaria", label: "LinkedIn" },
   ];
 
   return (
