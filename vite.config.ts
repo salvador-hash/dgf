@@ -5,9 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Para GitHub Pages, cambia esto al nombre de tu repositorio: base: '/nombre-repositorio/'
-  // Déjalo vacío para desarrollo local o Lovable
-  base: process.env.GITHUB_ACTIONS ? './' : '/',
+  // Configurado para GitHub Pages: salvador-hash/dgf
+  base: process.env.GITHUB_ACTIONS ? '/dgf/' : '/',
   server: {
     host: "::",
     port: 8080,
