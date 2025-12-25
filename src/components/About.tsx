@@ -1,78 +1,60 @@
-import { Check, Award, Users, Building2, Handshake, Trophy, Star } from "lucide-react";
+import { Check, Award, Users, Building2, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { icon: Trophy, value: "15+", label: "Años liderando" },
-  { icon: Users, value: "1,200+", label: "Familias felices" },
+  { icon: Trophy, value: "15+", label: "Años de experiencia" },
+  { icon: Users, value: "1,200+", label: "Clientes satisfechos" },
   { icon: Building2, value: "500+", label: "Propiedades vendidas" },
   { icon: Award, value: "98%", label: "Satisfacción" },
 ];
 
 const benefits = [
-  "Equipo de élite con más de 50 profesionales",
-  "Atención VIP personalizada 24/7",
-  "Cartera exclusiva de propiedades premium",
-  "Máxima transparencia y confidencialidad",
-  "Asesoría legal y financiera sin costo adicional",
-  "Red de contactos de alto nivel",
+  "Equipo de profesionales certificados",
+  "Atención personalizada 24/7",
+  "Amplia cartera de propiedades",
+  "Máxima transparencia en cada operación",
+  "Asesoría legal y financiera incluida",
 ];
 
 const About = () => {
   return (
-    <section id="nosotros" className="py-40 bg-gradient-to-br from-purple-dark via-primary to-purple-light text-primary-foreground overflow-hidden relative">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[200px]" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-glow/20 rounded-full blur-[150px]" />
-      
-      {/* Pattern Overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }} />
-      </div>
-
-      <div className="container mx-auto px-6 relative">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+    <section id="nosotros" className="py-24 bg-accent text-accent-foreground">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2.5 mb-8 animate-fade-up">
-              <Star className="w-5 h-5 text-accent fill-accent" />
-              <span className="font-body text-sm font-bold tracking-wider uppercase">
-                Los Mejores del Perú
-              </span>
-            </div>
+            <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-4 animate-fade-up">
+              Sobre Nosotros
+            </p>
 
-            <h2 className="font-display text-4xl md:text-6xl mb-8 animate-fade-up delay-100">
-              Somos la
-              <span className="text-accent"> referencia</span>
-              <span className="block">en bienes raíces</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 animate-fade-up delay-100">
+              SOMOS TU MEJOR
+              <span className="block text-primary">OPCIÓN INMOBILIARIA</span>
             </h2>
 
-            <p className="font-body text-xl text-primary-foreground/80 mb-10 leading-relaxed animate-fade-up delay-200">
-              En <span className="text-accent font-bold">dgf.</span> inmobiliaria no solo vendemos propiedades, 
-              creamos legados. Con más de 15 años transformando el mercado inmobiliario peruano, 
-              somos sinónimo de excelencia y confianza.
+            <p className="text-lg text-accent-foreground/80 mb-10 leading-relaxed animate-fade-up delay-200">
+              En DGF Inmobiliaria nos especializamos en conectar personas con su hogar ideal. 
+              Con más de 15 años de experiencia, somos referentes en el mercado inmobiliario peruano.
             </p>
 
             {/* Benefits List */}
-            <ul className="space-y-4 mb-12">
+            <ul className="space-y-4 mb-10">
               {benefits.map((benefit, index) => (
                 <li 
                   key={benefit} 
                   className="flex items-center gap-4 animate-fade-up"
-                  style={{ animationDelay: `${300 + index * 100}ms` }}
+                  style={{ animationDelay: `${300 + index * 80}ms` }}
                 >
-                  <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center flex-shrink-0 shadow-glow-orange">
-                    <Check className="w-5 h-5 text-accent-foreground" />
+                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-primary-foreground" />
                   </div>
-                  <span className="font-body text-lg text-primary-foreground/90">{benefit}</span>
+                  <span className="text-accent-foreground/90">{benefit}</span>
                 </li>
               ))}
             </ul>
 
-            <Button variant="accent" size="xl" className="animate-fade-up" style={{ animationDelay: "900ms" }}>
-              Conoce Nuestro Equipo
+            <Button variant="teal" size="lg" className="animate-fade-up" style={{ animationDelay: "700ms" }}>
+              Conocer Más
             </Button>
           </div>
 
@@ -81,16 +63,16 @@ const About = () => {
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
-                className="glass rounded-3xl p-10 text-center hover:bg-white/20 transition-all duration-500 group animate-fade-up"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="bg-navy-light rounded-lg p-8 text-center animate-fade-up"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/30 group-hover:scale-110 transition-all duration-500">
-                  <stat.icon className="w-8 h-8 text-accent" />
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-6 h-6 text-primary" />
                 </div>
-                <div className="font-display text-5xl md:text-6xl text-accent font-bold mb-3 group-hover:scale-110 transition-transform">
+                <div className="text-4xl md:text-5xl text-primary font-bold mb-2">
                   {stat.value}
                 </div>
-                <p className="font-body text-primary-foreground/70 text-lg">
+                <p className="text-accent-foreground/70 text-sm">
                   {stat.label}
                 </p>
               </div>
