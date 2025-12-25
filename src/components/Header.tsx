@@ -65,7 +65,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="teal" size="default">
+            <Button variant="orange" size="default">
               Cotizar
             </Button>
           </div>
@@ -101,7 +101,7 @@ const Header = () => {
               {link.name}
             </a>
           ))}
-          <Button variant="teal" size="lg" className="mt-4">
+          <Button variant="orange" size="lg" className="mt-4">
             Cotizar
           </Button>
         </nav>
