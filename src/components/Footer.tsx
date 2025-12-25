@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo-dgf.png";
 
 const Footer = () => {
@@ -130,12 +131,12 @@ const Footer = () => {
               © {currentYear} DGF Inmobiliaria. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-accent-foreground/50 text-xs hover:text-primary transition-colors">
+              <Link to="/terminos" className="text-accent-foreground/50 text-xs hover:text-primary transition-colors">
                 Términos y Condiciones
-              </a>
-              <a href="#" className="text-accent-foreground/50 text-xs hover:text-primary transition-colors">
+              </Link>
+              <Link to="/privacidad" className="text-accent-foreground/50 text-xs hover:text-primary transition-colors">
                 Política de Privacidad
-              </a>
+              </Link>
             </div>
           </div>
         </div>
