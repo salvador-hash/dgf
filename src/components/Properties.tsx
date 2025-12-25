@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { MapPin, Bed, Bath, Square, ArrowRight, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+import { MapPin, Bed, Bath, Square, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import property1 from "@/assets/property-1.jpg";
 import property2 from "@/assets/property-2.jpg";
@@ -39,44 +39,9 @@ const properties = [
     area: 400,
     status: "Pre-venta",
   },
-  {
-    id: 4,
-    image: property1,
-    title: "Vista Mar Residence",
-    location: "Miraflores, Lima",
-    price: "Desde $980,000",
-    beds: 3,
-    baths: 2,
-    area: 280,
-    status: "En construcción",
-  },
-  {
-    id: 5,
-    image: property2,
-    title: "Bosques del Norte",
-    location: "Surco, Lima",
-    price: "Desde $720,000",
-    beds: 4,
-    baths: 3,
-    area: 350,
-    status: "Pre-venta",
-  },
-  {
-    id: 6,
-    image: property3,
-    title: "Costa Verde Premium",
-    location: "Barranco, Lima",
-    price: "Desde $1,500,000",
-    beds: 5,
-    baths: 4,
-    area: 450,
-    status: "Entrega inmediata",
-  },
 ];
 
 const Properties = () => {
-  const [showAll, setShowAll] = useState(false);
-  const displayedProperties = showAll ? properties : properties.slice(0, 3);
   return (
     <section id="propiedades" className="py-32 pt-48 bg-secondary">
       <div className="container mx-auto px-6">
@@ -95,7 +60,7 @@ const Properties = () => {
 
         {/* Properties Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedProperties.map((property, index) => (
+          {properties.map((property, index) => (
             <article
               key={property.id}
               className="group bg-white rounded-lg overflow-hidden shadow-elegant hover:shadow-luxury transition-all duration-500 animate-fade-up"
@@ -156,24 +121,12 @@ const Properties = () => {
 
         {/* CTA */}
         <div className="text-center mt-12 animate-fade-up">
-          <Button 
-            variant="orange" 
-            size="lg" 
-            className="group"
-            onClick={() => setShowAll(!showAll)}
-          >
-            {showAll ? (
-              <>
-                Ver Menos
-                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              </>
-            ) : (
-              <>
-                Ver Todos los Proyectos
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </>
-            )}
-          </Button>
+          <Link to="/proyectos">
+            <Button variant="orange" size="lg" className="group">
+              Ver Todos los Proyectos
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
