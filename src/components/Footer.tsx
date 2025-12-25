@@ -19,8 +19,6 @@ const Footer = () => {
   const propertyTypes = [
     { name: "Departamentos", href: "#" },
     { name: "Casas", href: "#" },
-    { name: "Oficinas", href: "#" },
-    { name: "Terrenos", href: "#" },
   ];
 
   const socialLinks = [
