@@ -53,9 +53,11 @@ const About = () => {
               ))}
             </ul>
 
-            <Button variant="orange" size="lg" className="animate-fade-up" style={{ animationDelay: "700ms" }}>
-              Conocer Más
-            </Button>
+            <a href="#contacto">
+              <Button variant="orange" size="lg" className="animate-fade-up" style={{ animationDelay: "700ms" }}>
+                Conocer Más
+              </Button>
+            </a>
           </div>
 
           {/* Stats Grid */}

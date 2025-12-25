@@ -65,9 +65,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="orange" size="default">
-              Cotizar
-            </Button>
+            <a href="#contacto">
+              <Button variant="orange" size="default">
+                Cotizar
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,9 +103,11 @@ const Header = () => {
               {link.name}
             </a>
           ))}
-          <Button variant="orange" size="lg" className="mt-4">
-            Cotizar
-          </Button>
+          <a href="#contacto" onClick={() => setIsMobileMenuOpen(false)}>
+            <Button variant="orange" size="lg" className="mt-4 w-full">
+              Cotizar
+            </Button>
+          </a>
         </nav>
       </div>
     </header>
